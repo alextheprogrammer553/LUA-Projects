@@ -1,8 +1,4 @@
---[[
-	Author: Jagoba Marcos
-	Date: 01/13/2014
-	Description: Basics
-]]
+
 
 function main ()
 	
