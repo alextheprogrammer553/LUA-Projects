@@ -1,20 +1,34 @@
+
 function main ()
+
+	--mice roll
+
 	local sum = 0
 	local aux;
 	math.randomseed( os.time() );
 	math.random ();
-	io.write( "Rolling 5 mice ...\n" );
+	
+	io.write( "Rolling 5 mice ...\n");
 	for i = 1, 5 do
 		aux = math.random ( 6 );
 		io.write ( aux );
 		sum = sum + aux;
 	end
+	
 	io.write( "\n" );
-	io.write( "The sum of the mice is ", sum, "\n") ;
+	
+	io.write( "The sum of the dice is ", sum, "\n") ;
+	
+	-- Function calling
+	
 	io.write( "Lightning Bolt from a level 10 wizard dealt ", LightningBolt (10), " damage. \n" );
 	io.write( "Lightning Bolt from a level 20 wizard dealt ", LightningBolt (20), " damage. \n\n" );
+	
+	-- XP calculator
+	
 	local total = 0;
 	io.write( "My total XP is ", total,  "\n" );
+	
 	local enemy = Experience ( "Evil wookie", 50 );
 	total = total + enemy
 	io.write( "My total XP is ", total ,"\n\n");
@@ -24,6 +38,7 @@ function main ()
 	enemy = Experience ( "Fakex", 2 );
 	total = total + enemy
 	io.write( "My total XP is ", total ,"\n\n");
+	
 	io.write( "Enter the name of the enemy: " );
 	local userName = io.read( "*l");
 	io.write( "Enter the ", userName, "'s level: " );
@@ -31,17 +46,24 @@ function main ()
 	enemy = enemy + Experience ( userName, userLevel );
 	total = total + enemy
 	io.write( "My total XP is ", total ,"\n\n");
+
 end
+
 function LightningBolt ( level )
 	local suma = 0;
 	for i = 1, level do
 		aux = math.random ( 6 );
 		suma = suma + aux;
-    end
+	end
+	
 	return suma;
+
 end
+
 function Experience ( name, level)
+
 	local xp = level * 50;
 	io.write( "A level ", level, " ", name, " would reward ", xp, " experience points!\n" );
 	return xp;
+	
 end
