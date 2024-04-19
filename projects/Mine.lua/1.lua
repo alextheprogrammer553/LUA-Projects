@@ -17,7 +17,7 @@ function main ()
 	
 	io.write( "\n" );
 	
-	io.write( "The sum of the dice is ", sum, "\n") ;
+	io.write( "The sum of the mice is ", sum, "\n") ;
 	
 	-- Function calling
 	
